@@ -1,0 +1,27 @@
+name: Auto Comment
+on: [issues, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpened: |
+            👋 @{{ author }}
+            Thank you for creating an issue.
+
+          pullRequestOpened: |
+            👋 @{{ author }}
+            Your pull request is successfully submitted.
+            Please go through to [readme](https://github.com/harmeetsingh11/github-action-workflow-test/blob/main/README.md).
+
+          issuesClosed: |
+            👋 @{{ author }}. This issue is closed.
+
+          pullRequestMerged: |
+            Congratulations @${{ github.actor }}! 🎉 Your pull request is merged.
+
+          issuesAssigned: |
+            👋 @{{ author }}
+            I have assigned the issue to you.
