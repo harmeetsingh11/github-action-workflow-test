@@ -1,4 +1,4 @@
-let n = 10; // row or column count
+let n = 8; // row or column count
 
 let string = '';
 
@@ -7,7 +7,7 @@ for (let i = 0; i < n; i++) {
   for (let j = 0; j < n; j++) {
     // internal loop
     if (i === 0 || i === n - 1) {
-      string += '*';
+      string += '#';
     } else {
       if (j === 0 || j === n - 1) {
         string += '*';
@@ -16,7 +16,6 @@ for (let i = 0; i < n; i++) {
       }
     }
   }
-  // newline after each row
   string += '\n';
 }
 console.log(string);
